@@ -56,7 +56,7 @@
         </div>
     </section>
 
-    <!-- Family Uploads Mosaic Section (4 photos only) -->
+    <!-- Family Uploads Gallery Section (6 photos) -->
     <section class="section" style="background: linear-gradient(135deg, var(--pastel-mint) 0%, var(--pastel-yellow) 100%);">
         <div class="container">
             <div class="gallery-header fade-in">
@@ -66,21 +66,14 @@
                 </p>
             </div>
 
-            <!-- Simple 4-Photo Grid -->
-            <div class="nav-cards-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-md);">
-                <div class="nav-card" style="padding: 0; overflow: hidden;">
-                    <img src="assets/images/family_uploads/signal-2025-11-15-202738.jpeg" alt="Photo partagée" style="width: 100%; height: 300px; object-fit: cover;">
-                </div>
-                <div class="nav-card" style="padding: 0; overflow: hidden;">
-                    <img src="assets/images/family_uploads/signal-2025-11-15-202756.jpeg" alt="Photo partagée" style="width: 100%; height: 300px; object-fit: cover;">
-                </div>
-                <div class="nav-card" style="padding: 0; overflow: hidden;">
-                    <img src="assets/images/family_uploads/signal-2025-11-15-202828.jpeg" alt="Photo partagée" style="width: 100%; height: 300px; object-fit: cover;">
-                </div>
-                <div class="nav-card" style="padding: 0; overflow: hidden;">
-                    <img src="assets/images/family_uploads/signal-2025-11-15-203840_002.jpeg" alt="Photo partagée" style="width: 100%; height: 300px; object-fit: cover;">
-                </div>
+            <!-- Gallery Controls -->
+            <div class="gallery-controls">
+                <button class="control-btn active" data-mode="grid" data-gallery="family">📱 Vue Grille</button>
+                <button class="control-btn" data-mode="slideshow" data-gallery="family">🎬 Diaporama</button>
             </div>
+
+            <!-- Gallery Container -->
+            <div id="family-uploads-gallery" class="gallery-wrapper"></div>
         </div>
     </section>
 
@@ -185,6 +178,40 @@
     <script src="js/navigation.js?v=2"></script>
     <script src="js/gallery.js?v=2"></script>
     <script>
+        // Family uploads gallery (6 photos)
+        const familyUploadsImages = [
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-202738.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            },
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-202756.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            },
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-202828.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            },
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-203840_002.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            },
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-203840_003.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            },
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-203840_004.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            }
+        ];
+
         // Opening photos gallery (7 photos)
         const openingImages = [
             {
@@ -224,10 +251,17 @@
             }
         ];
 
-        // Initialize gallery
-        let openingGallery;
+        // Initialize galleries
+        let familyUploadsGallery, openingGallery;
 
         document.addEventListener('DOMContentLoaded', function() {
+            // Create family uploads gallery
+            familyUploadsGallery = new Gallery('family-uploads-gallery', familyUploadsImages, {
+                mode: 'grid',
+                autoplay: false,
+                autoplayInterval: 3000
+            });
+
             // Create opening gallery
             openingGallery = new Gallery('opening-gallery', openingImages, {
                 mode: 'grid',
@@ -235,15 +269,24 @@
                 autoplayInterval: 3000
             });
 
-            // Handle mode switching
+            // Handle mode switching for both galleries
             const controlBtns = document.querySelectorAll('.control-btn');
             controlBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
                     const mode = this.getAttribute('data-mode');
-                    openingGallery.switchMode(mode);
+                    const galleryType = this.getAttribute('data-gallery');
 
-                    // Update active state
-                    controlBtns.forEach(b => b.classList.remove('active'));
+                    // Switch the appropriate gallery
+                    if (galleryType === 'family') {
+                        familyUploadsGallery.switchMode(mode);
+                    } else if (galleryType === 'opening') {
+                        openingGallery.switchMode(mode);
+                    }
+
+                    // Update active state for this section only
+                    const section = this.closest('.section') || this.closest('.container');
+                    const sectionBtns = section.querySelectorAll('.control-btn');
+                    sectionBtns.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
                 });
             });
