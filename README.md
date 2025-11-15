@@ -11,6 +11,11 @@ A modern, responsive birthday celebration website featuring beautiful pastel col
 - **Dual View Modes**:
   - 📱 **Grid View**: Mobile-optimized, scrollable photo grid
   - 🎬 **Slideshow**: Automated diaporama with touch/swipe support
+- **📸 Family Photo Uploads**: Safe upload workflow via GitHub Issues
+  - Upload button for family members to contribute photos
+  - Manual review and approval system
+  - Dedicated "Uploaded by Friends & Family" gallery section
+  - No backend or database required
 - **Fully Responsive**: Optimized for desktop, tablet, and mobile devices
 - **Touch-Friendly**: Swipe gestures and mobile-first design
 - **Modular Architecture**: Clean, maintainable code structure
@@ -19,22 +24,32 @@ A modern, responsive birthday celebration website featuring beautiful pastel col
 
 ```
 MarineAndErwan/
-├── index.html              # Birthday landing page
-├── marine.html             # Marine's photo gallery
-├── erwan.html              # Erwan's photo gallery
-├── README.md               # This file
+├── index.html                  # Birthday landing page
+├── marine.html                 # Marine's photo gallery
+├── erwan.html                  # Erwan's photo gallery
+├── README.md                   # This file
+├── ADMIN_WORKFLOW.md           # Photo upload admin guide
+├── SETUP_GIT.md                # Git setup instructions
+├── .github/
+│   └── ISSUE_TEMPLATE/
+│       └── upload-photo.yml   # GitHub Issue template for uploads
 ├── css/
-│   ├── main.css           # Shared styles & pastel theme
-│   ├── gallery.css        # Gallery/slideshow styles
-│   └── index.css          # Landing page specific styles
+│   ├── main.css               # Shared styles & pastel theme
+│   ├── gallery.css            # Gallery/slideshow styles
+│   ├── index.css              # Landing page specific styles
+│   └── upload.css             # Upload section styles
 ├── js/
-│   ├── gallery.js         # Gallery & slideshow functionality
-│   └── navigation.js      # Navigation & utilities
+│   ├── gallery.js             # Gallery & slideshow functionality
+│   ├── navigation.js          # Navigation & utilities
+│   └── family-uploads.js      # Family uploads gallery logic
 └── assets/
     └── images/
-        ├── opening/       # 15 photos for landing page
-        ├── marine/        # Marine's photos (expandable)
-        └── erwan/         # Erwan's photos (expandable)
+        ├── opening/           # 15 photos for landing page
+        ├── marine/            # Marine's photos (expandable)
+        ├── erwan/             # Erwan's photos (expandable)
+        └── family_uploads/    # User-uploaded photos
+            ├── manifest.json  # Photo metadata
+            └── README.md      # Upload directory guide
 ```
 
 ## 🎨 Color Theme
@@ -165,6 +180,78 @@ optimize_image('original-photo.jpg', 'assets/images/marine/photo.jpg')
 - Touch/swipe gestures on mobile
 - Keyboard controls (← → arrows, spacebar for play/pause)
 - Photo counter display
+
+## 📸 Family Photo Upload Feature
+
+### How It Works (Safe & Secure)
+
+This website includes a **safe photo upload workflow** using GitHub Issues:
+
+1. **Family clicks "Upload Your Photos"** button on the homepage
+2. **GitHub Issue form opens** with clear upload instructions
+3. **They attach photos** and fill out contributor info
+4. **You receive notification** of the upload
+5. **You review and approve** photos manually
+6. **You add approved photos** to the website
+7. **Photos appear** in the "Uploaded by Friends & Family" section
+
+**Why this approach?**
+- ✅ No backend or database needed
+- ✅ No public write access to your repository
+- ✅ You control what gets published
+- ✅ Family doesn't need GitHub accounts
+- ✅ 100% compatible with GitHub Pages
+- ✅ Safe and secure
+
+### For Website Visitors (How to Upload)
+
+1. Visit the website
+2. Click the **"Upload Your Photos"** button
+3. Fill out the simple form
+4. Drag & drop photos (or click to browse)
+5. Submit!
+
+**Direct upload link:**
+```
+https://github.com/LesPetitsLoups/MarineandErwan/issues/new?template=upload-photo.yml
+```
+
+### For Admins (How to Review Uploads)
+
+**Quick Steps:**
+
+1. Check for new uploads: [View pending uploads](https://github.com/LesPetitsLoups/MarineandErwan/issues?q=label%3Aphoto-upload+label%3Apending-review)
+2. Download photos from the issue
+3. Copy to `assets/images/family_uploads/`
+4. Update `assets/images/family_uploads/manifest.json`
+5. Commit and push changes
+6. Comment on the issue and close it
+
+**Full detailed guide:** See [ADMIN_WORKFLOW.md](ADMIN_WORKFLOW.md)
+
+### manifest.json Example
+
+```json
+{
+  "photos": [
+    {
+      "filename": "marine-birthday-2023.jpg",
+      "contributor": "Aunt Sophie",
+      "description": "Marine's 5th birthday party",
+      "date": "Summer 2023",
+      "uploadDate": "2025-01-15"
+    }
+  ]
+}
+```
+
+### Important Notes
+
+- Photos are NOT automatically published
+- You must manually review and approve each upload
+- The upload button links to GitHub Issues
+- No server-side code or API needed
+- Perfect for static sites on GitHub Pages
 
 ## 🌐 Deploying to GitHub Pages
 

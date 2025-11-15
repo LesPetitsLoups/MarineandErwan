@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Marine's Birthday Photo Gallery - Special moments and memories">
-    <title>Marine's Gallery - Birthday Celebration</title>
+    <meta name="description" content="Galerie Photo d'Anniversaire de Marine - Moments spéciaux et souvenirs">
+    <title>Galerie de Marine - Célébration d'Anniversaire</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
@@ -17,9 +17,9 @@
     <!-- Navigation Header -->
     <nav class="nav-header">
         <div class="container nav-container">
-            <div class="nav-logo">👧 Marine's Gallery</div>
+            <div class="nav-logo">👧 Galerie de Marine</div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Accueil</a></li>
                 <li><a href="marine.html">Marine</a></li>
                 <li><a href="erwan.html">Erwan</a></li>
             </ul>
@@ -30,16 +30,16 @@
     <section class="section">
         <div class="container">
             <div class="gallery-header fade-in">
-                <h1 class="gallery-title">Marine's Special Moments</h1>
+                <h1 class="gallery-title">Les Moments Spéciaux de Marine</h1>
                 <p class="gallery-subtitle">
-                    A collection of beautiful memories and birthday celebrations
+                    Une collection de beaux souvenirs et de célébrations d'anniversaire
                 </p>
             </div>
 
             <!-- Gallery Controls -->
             <div class="gallery-controls">
-                <button class="control-btn active" data-mode="grid">📱 Grid View</button>
-                <button class="control-btn" data-mode="slideshow">🎬 Slideshow</button>
+                <button class="control-btn active" data-mode="grid">📱 Vue Grille</button>
+                <button class="control-btn" data-mode="slideshow">🎬 Diaporama</button>
             </div>
 
             <!-- Gallery Container -->
@@ -51,9 +51,9 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>Made with <span class="footer-heart">❤</span> for Marine</p>
+                <p>Fait avec <span class="footer-heart">❤</span> pour Marine</p>
                 <p style="font-size: 0.9rem; opacity: 0.8; margin-top: var(--spacing-sm);">
-                    <a href="index.html" style="color: var(--text-dark); text-decoration: underline;">← Back to Home</a>
+                    <a href="index.html" style="color: var(--text-dark); text-decoration: underline;">← Retour à l'Accueil</a>
                 </p>
             </div>
         </div>
@@ -63,43 +63,43 @@
     <script src="js/navigation.js"></script>
     <script src="js/gallery.js"></script>
     <script>
-        // Marine's photo collection
-        // Currently has 1 photo - ready to expand to 20-30 photos
+        // Collection de photos de Marine
+        // Actuellement 1 photo - prête à accueillir 20-30 photos
         const marineImages = [
             {
                 src: 'assets/images/marine/20211002_114329.jpg',
-                alt: 'Marine - Special Moment 1',
-                caption: 'Marine\'s Special Day'
+                alt: 'Marine - Moment Spécial 1',
+                caption: 'Jour Spécial de Marine'
             }
-            // TO ADD MORE PHOTOS:
-            // Simply add new photo files to the /assets/images/marine/ folder
-            // and add entries here following this format:
+            // POUR AJOUTER PLUS DE PHOTOS :
+            // Ajoutez simplement de nouveaux fichiers photo dans /assets/images/marine/
+            // et ajoutez des entrées ici dans ce format :
             // {
-            //     src: 'assets/images/marine/your-photo-name.jpg',
-            //     alt: 'Marine - Special Moment 2',
-            //     caption: 'Optional caption'
+            //     src: 'assets/images/marine/nom-de-votre-photo.jpg',
+            //     alt: 'Marine - Moment Spécial 2',
+            //     caption: 'Légende optionnelle'
             // },
         ];
 
-        // Initialize gallery
+        // Initialiser la galerie
         let marineGallery;
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Create gallery instance
+            // Créer l'instance de galerie
             marineGallery = new Gallery('marine-gallery', marineImages, {
                 mode: 'grid',
                 autoplay: false,
                 autoplayInterval: 3000
             });
 
-            // Handle mode switching
+            // Gérer le changement de mode
             const controlBtns = document.querySelectorAll('.control-btn');
             controlBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
                     const mode = this.getAttribute('data-mode');
                     marineGallery.switchMode(mode);
 
-                    // Update active state
+                    // Mettre à jour l'état actif
                     controlBtns.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
                 });

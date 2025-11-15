@@ -40,14 +40,16 @@
    • marine.html (Marine's gallery)
    • erwan.html (Erwan's gallery)
 
-✅ CSS Stylesheets: 3
+✅ CSS Stylesheets: 4
    • main.css (Shared styles & pastel theme)
    • gallery.css (Gallery/slideshow styles)
    • index.css (Landing page styles)
+   • upload.css (Family upload section) ⭐ NEW
 
-✅ JavaScript Files: 2
+✅ JavaScript Files: 3
    • gallery.js (Gallery & slideshow logic)
    • navigation.js (Navigation & utilities)
+   • family-uploads.js (Upload gallery) ⭐ NEW
 
 ✅ Photos Organized:
    • Opening page: 15 photos ✅
@@ -57,7 +59,16 @@
 ✅ Documentation:
    • README.md (Full documentation)
    • SETUP_GIT.md (Git setup guide)
+   • ADMIN_WORKFLOW.md (Photo upload admin guide) ⭐ NEW
+   • UPLOAD_FEATURE_SUMMARY.md (Upload feature overview) ⭐ NEW
    • .gitignore (Git ignore rules)
+
+✅ Upload Feature: ⭐ NEW
+   • GitHub Issue template for safe photo uploads
+   • "Upload Your Photos" button on homepage
+   • "Uploaded by Friends & Family" gallery section
+   • Manual review and approval workflow
+   • No backend required - 100% static!
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -86,6 +97,9 @@ See README.md for detailed instructions!
 ✅ Keyboard navigation (← → arrows, spacebar)
 ✅ Lightbox for full-size photo viewing
 ✅ Modern, maintainable code structure
+✅ 📸 Family photo upload via GitHub Issues ⭐ NEW
+✅ Safe manual review workflow ⭐ NEW
+✅ Dedicated family uploads gallery ⭐ NEW
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
@@ -103,6 +117,8 @@ See README.md for detailed instructions!
 
 → README.md - Complete documentation
 → SETUP_GIT.md - Git setup instructions
+→ ADMIN_WORKFLOW.md - How to manage photo uploads ⭐ NEW
+→ UPLOAD_FEATURE_SUMMARY.md - Upload feature details ⭐ NEW
 
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 

@@ -1,14 +1,15 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Marine & Erwan's Birthday Celebration - A family photo collection">
-    <title>Marine & Erwan - Birthday Celebration</title>
+    <meta name="description" content="Anniversaire de Marine & Erwan - Une collection de photos de famille">
+    <title>Marine & Erwan - Célébration d'Anniversaire</title>
 
     <!-- Stylesheets -->
     <link rel="stylesheet" href="css/main.css">
     <link rel="stylesheet" href="css/index.css">
+    <link rel="stylesheet" href="css/upload.css">
 
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎂</text></svg>">
@@ -19,7 +20,7 @@
         <div class="container nav-container">
             <div class="nav-logo">🎂 Marine & Erwan</div>
             <ul class="nav-links">
-                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Accueil</a></li>
                 <li><a href="marine.html">Marine</a></li>
                 <li><a href="erwan.html">Erwan</a></li>
             </ul>
@@ -30,10 +31,10 @@
     <section class="hero">
         <div class="hero-content">
             <div class="hero-emoji">🎉</div>
-            <h1 class="hero-title">Happy Birthday!</h1>
-            <h2 class="hero-subtitle">Celebrating Marine & Erwan</h2>
+            <h1 class="hero-title">Joyeux Anniversaire !</h1>
+            <h2 class="hero-subtitle">Célébrons Marine & Erwan</h2>
             <p style="font-size: 1.2rem; color: var(--text-dark); margin-top: var(--spacing-md);">
-                A collection of beautiful memories and special moments
+                Une collection de beaux souvenirs et de moments spéciaux
             </p>
         </div>
     </section>
@@ -42,14 +43,50 @@
     <section class="intro-section">
         <div class="container">
             <div class="intro-content fade-in">
-                <h2>Welcome to Our Celebration</h2>
+                <h2>Bienvenue à Notre Célébration</h2>
                 <p>
-                    This special website is dedicated to celebrating the birthdays of Marine and Erwan.
-                    Explore the cherished memories, beautiful photos, and joyful moments we've shared together as a family.
+                    Ce site spécial est dédié à la célébration des anniversaires de Marine et Erwan.
+                    Explorez les souvenirs précieux, les belles photos et les moments joyeux que nous avons partagés ensemble en famille.
                 </p>
                 <p>
-                    Click on each name below to view their personal photo galleries and relive these wonderful times.
+                    Cliquez sur chaque nom ci-dessous pour voir leurs galeries photos personnelles et revivre ces moments merveilleux.
                 </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Family Uploads Gallery Section -->
+    <section class="family-uploads-section">
+        <div class="container">
+            <div class="family-uploads-header">
+                <h2 class="family-uploads-title">Partagé par la Famille et les Amis</h2>
+                <p class="family-uploads-subtitle">
+                    Merci à tous ceux qui ont partagé leurs moments spéciaux !
+                </p>
+            </div>
+
+            <!-- Dynamic Gallery Container -->
+            <div id="family-uploads-container">
+                <!-- This will be populated by JavaScript -->
+                <div class="family-uploads-empty">
+                    <div class="family-uploads-empty-icon">📷</div>
+                    <h3 class="family-uploads-empty-title">Soyez le Premier à Partager !</h3>
+                    <p class="family-uploads-empty-text">
+                        Aucune photo n'a encore été partagée. Soyez le premier à contribuer vos souvenirs préférés de Marine et Erwan !
+                    </p>
+                </div>
+            </div>
+
+            <!-- Upload Stats (Hidden initially) -->
+            <div id="upload-stats" class="upload-stats" style="display: none;">
+                <div class="upload-stat-card">
+                    <span class="upload-stat-number" id="total-uploads">0</span>
+                    <span class="upload-stat-label">Photos Partagées</span>
+                </div>
+                <div class="upload-stat-card">
+                    <span class="upload-stat-number" id="total-contributors">0</span>
+                    <span class="upload-stat-label">Contributeurs</span>
+                </div>
             </div>
         </div>
     </section>
@@ -57,7 +94,7 @@
     <!-- Celebration Banner -->
     <div class="container">
         <div class="celebration-banner slide-in">
-            <h3>Join us in celebrating these special days!</h3>
+            <h3>Rejoignez-nous pour célébrer ces jours spéciaux !</h3>
             <div class="celebration-icons">
                 <span>🎂</span>
                 <span>🎈</span>
@@ -70,40 +107,40 @@
     <!-- Family Photos Showcase -->
     <section class="family-photos">
         <div class="container">
-            <h2 class="photos-title">Family Memories</h2>
+            <h2 class="photos-title">Souvenirs de Famille</h2>
 
             <div class="photo-marquee">
                 <div class="photo-track">
                     <!-- Photo Cards -->
                     <div class="photo-card">
-                        <img src="assets/images/opening/20201225_130911.jpg" alt="Family photo" loading="eager">
+                        <img src="assets/images/opening/20201225_130911.jpg" alt="Photo de famille" loading="eager">
                     </div>
                     <div class="photo-card">
-                        <img src="assets/images/opening/20201225_143457.jpg" alt="Family photo" loading="lazy">
+                        <img src="assets/images/opening/20201225_143457.jpg" alt="Photo de famille" loading="lazy">
                     </div>
                     <div class="photo-card">
-                        <img src="assets/images/opening/20201226_140939.jpg" alt="Family photo" loading="lazy">
+                        <img src="assets/images/opening/20201226_140939.jpg" alt="Photo de famille" loading="lazy">
                     </div>
                     <div class="photo-card">
-                        <img src="assets/images/opening/20211002_114329.jpg" alt="Family photo" loading="lazy">
+                        <img src="assets/images/opening/20211002_114329.jpg" alt="Photo de famille" loading="lazy">
                     </div>
                     <div class="photo-card">
-                        <img src="assets/images/opening/20211002_115241.jpg" alt="Family photo" loading="lazy">
+                        <img src="assets/images/opening/20211002_115241.jpg" alt="Photo de famille" loading="lazy">
                     </div>
                     <div class="photo-card">
-                        <img src="assets/images/opening/IMG_20180823_214237.jpg" alt="Family photo" loading="lazy">
+                        <img src="assets/images/opening/IMG_20180823_214237.jpg" alt="Photo de famille" loading="lazy">
                     </div>
                     <div class="photo-card">
-                        <img src="assets/images/opening/IMG_20180824_102831.jpg" alt="Family photo" loading="lazy">
+                        <img src="assets/images/opening/IMG_20180824_102831.jpg" alt="Photo de famille" loading="lazy">
                     </div>
                     <div class="photo-card">
-                        <img src="assets/images/opening/IMG_20180825_143531.jpg" alt="Family photo" loading="lazy">
+                        <img src="assets/images/opening/IMG_20180825_143531.jpg" alt="Photo de famille" loading="lazy">
                     </div>
                     <div class="photo-card">
-                        <img src="assets/images/opening/20211224_210248.jpg" alt="Family photo" loading="lazy">
+                        <img src="assets/images/opening/20211224_210248.jpg" alt="Photo de famille" loading="lazy">
                     </div>
                     <div class="photo-card">
-                        <img src="assets/images/opening/20211225_134218.jpg" alt="Family photo" loading="lazy">
+                        <img src="assets/images/opening/20211225_134218.jpg" alt="Photo de famille" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -113,7 +150,7 @@
     <!-- Navigation Cards Section -->
     <section class="navigation-section">
         <div class="container">
-            <h2 class="navigation-title">Explore Our Galleries</h2>
+            <h2 class="navigation-title">Explorez Nos Galeries</h2>
 
             <div class="nav-cards-container">
                 <!-- Marine's Card -->
@@ -121,9 +158,9 @@
                     <span class="nav-card-icon">👧</span>
                     <h3 class="nav-card-title">Marine</h3>
                     <p class="nav-card-description">
-                        View Marine's special moments and birthday memories
+                        Découvrez les moments spéciaux et les souvenirs d'anniversaire de Marine
                     </p>
-                    <span class="nav-card-cta">View Gallery →</span>
+                    <span class="nav-card-cta">Voir la Galerie →</span>
                 </a>
 
                 <!-- Erwan's Card -->
@@ -131,10 +168,32 @@
                     <span class="nav-card-icon">👦</span>
                     <h3 class="nav-card-title">Erwan</h3>
                     <p class="nav-card-description">
-                        Discover Erwan's adventures and birthday celebrations
+                        Découvrez les aventures et les célébrations d'anniversaire d'Erwan
                     </p>
-                    <span class="nav-card-cta">View Gallery →</span>
+                    <span class="nav-card-cta">Voir la Galerie →</span>
                 </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Upload Call-to-Action Section (Moved to Bottom) -->
+    <section class="container">
+        <div class="upload-cta-section scale-in">
+            <div class="upload-cta-content">
+                <div class="upload-cta-icon">📸</div>
+                <h2 class="upload-cta-title">Partagez Vos Photos !</h2>
+                <p class="upload-cta-description">
+                    Vous avez des photos de Marine et Erwan que vous aimeriez partager ? Nous serions ravis de les voir !
+                    Cliquez ci-dessous pour envoyer vos souvenirs préférés et rejoindre notre galerie familiale.
+                </p>
+                <a href="mailto:marineeterwan29@gmail.com?subject=Photos%20pour%20Marine%20et%20Erwan&body=Bonjour%2C%0A%0AJe%20voudrais%20partager%20des%20photos%20de%20Marine%20et%20Erwan.%0A%0AMon%20nom%20%3A%20%0ADescription%20des%20photos%20%3A%20%0ADate%20approximative%20%3A%20%0A%0AVeuillez%20joindre%20vos%20photos%20%C3%A0%20cet%20email.%0A%0AMerci%20!%0A"
+                   class="upload-btn-primary">
+                    <span class="upload-btn-icon">📤</span>
+                    Envoyer Vos Photos par Email
+                </a>
+                <p class="upload-instructions">
+                    Facile : Envoyez vos photos par email à marineeterwan29@gmail.com
+                </p>
             </div>
         </div>
     </section>
@@ -143,9 +202,9 @@
     <footer class="footer">
         <div class="container">
             <div class="footer-content">
-                <p>Made with <span class="footer-heart">❤</span> for Marine & Erwan</p>
+                <p>Fait avec <span class="footer-heart">❤</span> pour Marine & Erwan</p>
                 <p style="font-size: 0.9rem; opacity: 0.8; margin-top: var(--spacing-sm);">
-                    © 2025 | A Birthday Celebration
+                    © 2025 | Une Célébration d'Anniversaire
                 </p>
             </div>
         </div>
@@ -153,5 +212,6 @@
 
     <!-- JavaScript -->
     <script src="js/navigation.js"></script>
+    <script src="js/family-uploads.js"></script>
 </body>
 </html>
