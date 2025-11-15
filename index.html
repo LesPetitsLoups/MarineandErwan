@@ -55,7 +55,7 @@
         </div>
     </section>
 
-    <!-- Family Uploads Gallery Section -->
+    <!-- Family Uploads Mosaic Section (4 photos only) -->
     <section class="section" style="background: linear-gradient(135deg, var(--pastel-mint) 0%, var(--pastel-yellow) 100%);">
         <div class="container">
             <div class="gallery-header fade-in">
@@ -65,14 +65,21 @@
                 </p>
             </div>
 
-            <!-- Gallery Controls -->
-            <div class="gallery-controls">
-                <button class="control-btn active" data-mode="grid" data-gallery="family">📱 Vue Grille</button>
-                <button class="control-btn" data-mode="slideshow" data-gallery="family">🎬 Diaporama</button>
+            <!-- Simple 4-Photo Grid -->
+            <div class="nav-cards-container" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: var(--spacing-md);">
+                <div class="nav-card" style="padding: 0; overflow: hidden;">
+                    <img src="assets/images/family_uploads/signal-2025-11-15-202738.jpeg" alt="Photo partagée" style="width: 100%; height: 300px; object-fit: cover;">
+                </div>
+                <div class="nav-card" style="padding: 0; overflow: hidden;">
+                    <img src="assets/images/family_uploads/signal-2025-11-15-202756.jpeg" alt="Photo partagée" style="width: 100%; height: 300px; object-fit: cover;">
+                </div>
+                <div class="nav-card" style="padding: 0; overflow: hidden;">
+                    <img src="assets/images/family_uploads/signal-2025-11-15-202828.jpeg" alt="Photo partagée" style="width: 100%; height: 300px; object-fit: cover;">
+                </div>
+                <div class="nav-card" style="padding: 0; overflow: hidden;">
+                    <img src="assets/images/family_uploads/signal-2025-11-15-203840_002.jpeg" alt="Photo partagée" style="width: 100%; height: 300px; object-fit: cover;">
+                </div>
             </div>
-
-            <!-- Gallery Container -->
-            <div id="family-uploads-gallery" class="gallery-wrapper"></div>
         </div>
     </section>
 
@@ -88,27 +95,6 @@
             </div>
         </div>
     </div>
-
-    <!-- Family Photos Showcase -->
-    <section class="section">
-        <div class="container">
-            <div class="gallery-header fade-in">
-                <h2 class="gallery-title">Souvenirs de Famille</h2>
-                <p class="gallery-subtitle">
-                    Nos plus beaux moments ensemble
-                </p>
-            </div>
-
-            <!-- Gallery Controls -->
-            <div class="gallery-controls">
-                <button class="control-btn active" data-mode="grid" data-gallery="opening">📱 Vue Grille</button>
-                <button class="control-btn" data-mode="slideshow" data-gallery="opening">🎬 Diaporama</button>
-            </div>
-
-            <!-- Gallery Container -->
-            <div id="opening-gallery" class="gallery-wrapper"></div>
-        </div>
-    </section>
 
     <!-- Navigation Cards Section -->
     <section class="navigation-section">
@@ -161,6 +147,27 @@
         </div>
     </section>
 
+    <!-- Opening Gallery Section (at bottom like Marine/Erwan pages) -->
+    <section class="section">
+        <div class="container">
+            <div class="gallery-header fade-in">
+                <h2 class="gallery-title">Souvenirs de Famille</h2>
+                <p class="gallery-subtitle">
+                    Nos plus beaux moments ensemble
+                </p>
+            </div>
+
+            <!-- Gallery Controls -->
+            <div class="gallery-controls">
+                <button class="control-btn active" data-mode="grid" data-gallery="opening">📱 Vue Grille</button>
+                <button class="control-btn" data-mode="slideshow" data-gallery="opening">🎬 Diaporama</button>
+            </div>
+
+            <!-- Gallery Container -->
+            <div id="opening-gallery" class="gallery-wrapper"></div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
@@ -206,243 +213,8 @@
             }
         ];
 
-        // Family uploads gallery (9 photos from family_uploads folder)
-        const familyUploadsImages = [
-            {
-                src: 'assets/images/family_uploads/signal-2025-11-15-202738.jpeg',
-                alt: 'Photo partagée',
-                caption: ''
-            },
-            {
-                src: 'assets/images/family_uploads/signal-2025-11-15-202756.jpeg',
-                alt: 'Photo partagée',
-                caption: ''
-            },
-            {
-                src: 'assets/images/family_uploads/signal-2025-11-15-202828.jpeg',
-                alt: 'Photo partagée',
-                caption: ''
-            },
-            {
-                src: 'assets/images/family_uploads/signal-2025-11-15-203840_002.jpeg',
-                alt: 'Photo partagée',
-                caption: ''
-            },
-            {
-                src: 'assets/images/family_uploads/signal-2025-11-15-203840_003.jpeg',
-                alt: 'Photo partagée',
-                caption: ''
-            },
-            {
-                src: 'assets/images/family_uploads/signal-2025-11-15-203840_004.jpeg',
-                alt: 'Photo partagée',
-                caption: ''
-            },
-            {
-                src: 'assets/images/family_uploads/signal-2025-11-15-203840_005.jpeg',
-                alt: 'Photo partagée',
-                caption: ''
-            },
-            {
-                src: 'assets/images/family_uploads/signal-2025-11-15-204224.jpeg',
-                alt: 'Photo partagée',
-                caption: ''
-            },
-            {
-                src: 'assets/images/family_uploads/signal-2025-11-15-204329.jpeg',
-                alt: 'Photo partagée',
-                caption: ''
-            }
-        ];
-
-        // Combined gallery with all Marine and Erwan photos (NO CAPTIONS)
-        const combinedImages = [
-            // Marine's photos
-            {
-                src: 'assets/images/marine/20201225_130911.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/20201225_143457.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/20201226_140939.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/20211002_114329.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/20211002_115241.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/20211002_133416.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/20211003_091706.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/20211224_210248.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/20211225_134218.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/20211227_111858.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/IMG_20180823_214237.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/IMG_20180824_102831.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/IMG_20180824_121320.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/IMG_20180825_143531.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/IMG_20180826_111353.jpg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/signal-2025-11-15-164603_002.jpeg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/signal-2025-11-15-164705_002.jpeg',
-                alt: 'Marine',
-                caption: ''
-            },
-            {
-                src: 'assets/images/marine/signal-2025-11-15-164812_002.jpeg',
-                alt: 'Marine',
-                caption: ''
-            },
-            // Erwan's photos
-            {
-                src: 'assets/images/erwan/20201225_130911.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/20201225_143457.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/20201226_140939.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/20211002_114329.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/20211002_115241.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/20211002_133416.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/20211003_091706.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/20211224_210248.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/20211225_134218.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/20211227_111858.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/IMG_20180823_214237.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/IMG_20180824_102831.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/IMG_20180824_121320.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/IMG_20180825_143531.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/IMG_20180826_111353.jpg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/signal-2025-11-15-164603_002.jpeg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/signal-2025-11-15-164705_002.jpeg',
-                alt: 'Erwan',
-                caption: ''
-            },
-            {
-                src: 'assets/images/erwan/signal-2025-11-15-164812_002.jpeg',
-                alt: 'Erwan',
-                caption: ''
-            }
-        ];
-
-        // Initialize galleries
-        let openingGallery, familyUploadsGallery, combinedGallery;
+        // Initialize gallery
+        let openingGallery;
 
         document.addEventListener('DOMContentLoaded', function() {
             // Create opening gallery
@@ -452,46 +224,15 @@
                 autoplayInterval: 3000
             });
 
-            // Create family uploads gallery
-            familyUploadsGallery = new Gallery('family-uploads-gallery', familyUploadsImages, {
-                mode: 'grid',
-                autoplay: false,
-                autoplayInterval: 3000
-            });
-
-            // Create combined gallery
-            combinedGallery = new Gallery('combined-gallery', combinedImages, {
-                mode: 'grid',
-                autoplay: false,
-                autoplayInterval: 3000
-            });
-
-            // Handle mode switching for all galleries
+            // Handle mode switching
             const controlBtns = document.querySelectorAll('.control-btn');
-
             controlBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
                     const mode = this.getAttribute('data-mode');
-                    const galleryType = this.getAttribute('data-gallery');
+                    openingGallery.switchMode(mode);
 
-                    // Switch the appropriate gallery
-                    if (galleryType === 'opening') {
-                        openingGallery.switchMode(mode);
-                    } else if (galleryType === 'family') {
-                        familyUploadsGallery.switchMode(mode);
-                    } else {
-                        // Combined gallery (no data-gallery attribute)
-                        const gallerySection = this.closest('.section');
-                        const galleryId = gallerySection.querySelector('.gallery-wrapper').id;
-                        if (galleryId === 'combined-gallery') {
-                            combinedGallery.switchMode(mode);
-                        }
-                    }
-
-                    // Update active state for this section only
-                    const section = this.closest('.section') || this.closest('.container');
-                    const sectionBtns = section.querySelectorAll('.control-btn');
-                    sectionBtns.forEach(b => b.classList.remove('active'));
+                    // Update active state
+                    controlBtns.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
                 });
             });
