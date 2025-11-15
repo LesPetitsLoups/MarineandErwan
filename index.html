@@ -176,6 +176,27 @@
         </div>
     </section>
 
+    <!-- Combined Gallery Section -->
+    <section class="section" style="background: linear-gradient(135deg, var(--pastel-lavender) 0%, var(--pastel-mint) 100%); padding: var(--spacing-xxl) 0;">
+        <div class="container">
+            <div class="gallery-header fade-in">
+                <h2 class="gallery-title">Tous Nos Moments Ensemble</h2>
+                <p class="gallery-subtitle">
+                    Une collection complète de tous les souvenirs de Marine et Erwan
+                </p>
+            </div>
+
+            <!-- Gallery Controls -->
+            <div class="gallery-controls">
+                <button class="control-btn active" data-mode="grid">📱 Vue Grille</button>
+                <button class="control-btn" data-mode="slideshow">🎬 Diaporama</button>
+            </div>
+
+            <!-- Gallery Container -->
+            <div id="combined-gallery" class="gallery-wrapper"></div>
+        </div>
+    </section>
+
     <!-- Upload Call-to-Action Section (Moved to Bottom) -->
     <section class="container">
         <div class="upload-cta-section scale-in">
@@ -183,16 +204,39 @@
                 <div class="upload-cta-icon">📸</div>
                 <h2 class="upload-cta-title">Partagez Vos Photos !</h2>
                 <p class="upload-cta-description">
-                    Vous avez des photos de Marine et Erwan que vous aimeriez partager ? Nous serions ravis de les voir !
-                    Cliquez ci-dessous pour envoyer vos souvenirs préférés et rejoindre notre galerie familiale.
+                    Vous avez des photos de Marine ou Erwan que vous aimeriez partager ? Nous serions ravis de les voir !
+                    Choisissez ci-dessous pour qui sont vos photos et envoyez-les par email.
                 </p>
-                <a href="mailto:marineeterwan29@gmail.com?subject=Photos%20pour%20Marine%20et%20Erwan&body=Bonjour%2C%0A%0AJe%20voudrais%20partager%20des%20photos%20de%20Marine%20et%20Erwan.%0A%0AMon%20nom%20%3A%20%0ADescription%20des%20photos%20%3A%20%0ADate%20approximative%20%3A%20%0A%0AVeuillez%20joindre%20vos%20photos%20%C3%A0%20cet%20email.%0A%0AMerci%20!%0A"
-                   class="upload-btn-primary">
-                    <span class="upload-btn-icon">📤</span>
-                    Envoyer Vos Photos par Email
-                </a>
+
+                <!-- Upload Button Group -->
+                <div style="display: flex; flex-direction: column; gap: var(--spacing-md); max-width: 500px; margin: var(--spacing-lg) auto;">
+                    <!-- Both Button -->
+                    <a href="mailto:marineeterwan29@gmail.com?subject=Photos%20pour%20Marine%20et%20Erwan&body=Bonjour%2C%0A%0AJe%20voudrais%20partager%20des%20photos%20de%20Marine%20ET%20Erwan.%0A%0AMon%20nom%20%3A%20%0ADescription%20des%20photos%20%3A%20%0ADate%20approximative%20%3A%20%0A%0AVeuillez%20joindre%20vos%20photos%20%C3%A0%20cet%20email.%0A%0AMerci%20!%0A"
+                       class="upload-btn-primary"
+                       style="background: linear-gradient(135deg, var(--pastel-coral), var(--pastel-pink));">
+                        <span class="upload-btn-icon">📤</span>
+                        Photos de Marine et Erwan
+                    </a>
+
+                    <!-- Marine Button -->
+                    <a href="mailto:marineeterwan29@gmail.com?subject=Photos%20pour%20Marine&body=Bonjour%2C%0A%0AJe%20voudrais%20partager%20des%20photos%20de%20MARINE.%0A%0AMon%20nom%20%3A%20%0ADescription%20des%20photos%20%3A%20%0ADate%20approximative%20%3A%20%0A%0AVeuillez%20joindre%20vos%20photos%20%C3%A0%20cet%20email.%0A%0AMerci%20!%0A"
+                       class="upload-btn-primary"
+                       style="background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-lavender));">
+                        <span class="upload-btn-icon">👧</span>
+                        Photos de Marine
+                    </a>
+
+                    <!-- Erwan Button -->
+                    <a href="mailto:marineeterwan29@gmail.com?subject=Photos%20pour%20Erwan&body=Bonjour%2C%0A%0AJe%20voudrais%20partager%20des%20photos%20d%27ERWAN.%0A%0AMon%20nom%20%3A%20%0ADescription%20des%20photos%20%3A%20%0ADate%20approximative%20%3A%20%0A%0AVeuillez%20joindre%20vos%20photos%20%C3%A0%20cet%20email.%0A%0AMerci%20!%0A"
+                       class="upload-btn-primary"
+                       style="background: linear-gradient(135deg, var(--pastel-blue), var(--pastel-mint));">
+                        <span class="upload-btn-icon">👦</span>
+                        Photos d'Erwan
+                    </a>
+                </div>
+
                 <p class="upload-instructions">
-                    Facile : Envoyez vos photos par email à marineeterwan29@gmail.com
+                    Les emails seront envoyés à marineeterwan29@gmail.com avec le sujet correspondant
                 </p>
             </div>
         </div>
@@ -213,5 +257,220 @@
     <!-- JavaScript -->
     <script src="js/navigation.js"></script>
     <script src="js/family-uploads.js"></script>
+    <script src="js/gallery.js"></script>
+    <script>
+        // Combined gallery with all Marine and Erwan photos
+        const combinedImages = [
+            // Marine's photos
+            {
+                src: 'assets/images/marine/20201225_130911.jpg',
+                alt: 'Marine - Noël 2020',
+                caption: 'Marine - Noël en Famille 2020'
+            },
+            {
+                src: 'assets/images/marine/20201225_143457.jpg',
+                alt: 'Marine - Noël 2020',
+                caption: 'Marine - Après-midi de Noël'
+            },
+            {
+                src: 'assets/images/marine/20201226_140939.jpg',
+                alt: 'Marine - Fin 2020',
+                caption: 'Marine - Moments de Joie'
+            },
+            {
+                src: 'assets/images/marine/20211002_114329.jpg',
+                alt: 'Marine - Octobre 2021',
+                caption: 'Marine - Jour Spécial'
+            },
+            {
+                src: 'assets/images/marine/20211002_115241.jpg',
+                alt: 'Marine - Octobre 2021',
+                caption: 'Marine - Sourire d\'Automne'
+            },
+            {
+                src: 'assets/images/marine/20211002_133416.jpg',
+                alt: 'Marine - Octobre 2021',
+                caption: 'Marine - Belle Journée'
+            },
+            {
+                src: 'assets/images/marine/20211003_091706.jpg',
+                alt: 'Marine - Octobre 2021',
+                caption: 'Marine - Matin Radieux'
+            },
+            {
+                src: 'assets/images/marine/20211224_210248.jpg',
+                alt: 'Marine - Noël 2021',
+                caption: 'Marine - Veille de Noël'
+            },
+            {
+                src: 'assets/images/marine/20211225_134218.jpg',
+                alt: 'Marine - Noël 2021',
+                caption: 'Marine - Jour de Noël 2021'
+            },
+            {
+                src: 'assets/images/marine/20211227_111858.jpg',
+                alt: 'Marine - Fin 2021',
+                caption: 'Marine - Fin d\'Année Joyeuse'
+            },
+            {
+                src: 'assets/images/marine/IMG_20180823_214237.jpg',
+                alt: 'Marine - Été 2018',
+                caption: 'Marine - Soirée d\'Été'
+            },
+            {
+                src: 'assets/images/marine/IMG_20180824_102831.jpg',
+                alt: 'Marine - Été 2018',
+                caption: 'Marine - Matinée Ensoleillée'
+            },
+            {
+                src: 'assets/images/marine/IMG_20180824_121320.jpg',
+                alt: 'Marine - Été 2018',
+                caption: 'Marine - Après-midi d\'Août'
+            },
+            {
+                src: 'assets/images/marine/IMG_20180825_143531.jpg',
+                alt: 'Marine - Été 2018',
+                caption: 'Marine - Journée Estivale'
+            },
+            {
+                src: 'assets/images/marine/IMG_20180826_111353.jpg',
+                alt: 'Marine - Été 2018',
+                caption: 'Marine - Fin d\'Été'
+            },
+            {
+                src: 'assets/images/marine/signal-2025-11-15-164603_002.jpeg',
+                alt: 'Marine - Récent',
+                caption: 'Marine - Nouveau Souvenir'
+            },
+            {
+                src: 'assets/images/marine/signal-2025-11-15-164705_002.jpeg',
+                alt: 'Marine - Récent',
+                caption: 'Marine - Moment Précieux'
+            },
+            {
+                src: 'assets/images/marine/signal-2025-11-15-164812_002.jpeg',
+                alt: 'Marine - Récent',
+                caption: 'Marine - Derniers Moments'
+            },
+            // Erwan's photos
+            {
+                src: 'assets/images/erwan/20201225_130911.jpg',
+                alt: 'Erwan - Noël 2020',
+                caption: 'Erwan - Noël en Famille 2020'
+            },
+            {
+                src: 'assets/images/erwan/20201225_143457.jpg',
+                alt: 'Erwan - Noël 2020',
+                caption: 'Erwan - Après-midi de Noël'
+            },
+            {
+                src: 'assets/images/erwan/20201226_140939.jpg',
+                alt: 'Erwan - Fin 2020',
+                caption: 'Erwan - Moments de Joie'
+            },
+            {
+                src: 'assets/images/erwan/20211002_114329.jpg',
+                alt: 'Erwan - Octobre 2021',
+                caption: 'Erwan - Jour Spécial'
+            },
+            {
+                src: 'assets/images/erwan/20211002_115241.jpg',
+                alt: 'Erwan - Octobre 2021',
+                caption: 'Erwan - Sourire d\'Automne'
+            },
+            {
+                src: 'assets/images/erwan/20211002_133416.jpg',
+                alt: 'Erwan - Octobre 2021',
+                caption: 'Erwan - Belle Journée'
+            },
+            {
+                src: 'assets/images/erwan/20211003_091706.jpg',
+                alt: 'Erwan - Octobre 2021',
+                caption: 'Erwan - Matin Radieux'
+            },
+            {
+                src: 'assets/images/erwan/20211224_210248.jpg',
+                alt: 'Erwan - Noël 2021',
+                caption: 'Erwan - Veille de Noël'
+            },
+            {
+                src: 'assets/images/erwan/20211225_134218.jpg',
+                alt: 'Erwan - Noël 2021',
+                caption: 'Erwan - Jour de Noël 2021'
+            },
+            {
+                src: 'assets/images/erwan/20211227_111858.jpg',
+                alt: 'Erwan - Fin 2021',
+                caption: 'Erwan - Fin d\'Année Joyeuse'
+            },
+            {
+                src: 'assets/images/erwan/IMG_20180823_214237.jpg',
+                alt: 'Erwan - Été 2018',
+                caption: 'Erwan - Soirée d\'Été'
+            },
+            {
+                src: 'assets/images/erwan/IMG_20180824_102831.jpg',
+                alt: 'Erwan - Été 2018',
+                caption: 'Erwan - Matinée Ensoleillée'
+            },
+            {
+                src: 'assets/images/erwan/IMG_20180824_121320.jpg',
+                alt: 'Erwan - Été 2018',
+                caption: 'Erwan - Après-midi d\'Août'
+            },
+            {
+                src: 'assets/images/erwan/IMG_20180825_143531.jpg',
+                alt: 'Erwan - Été 2018',
+                caption: 'Erwan - Journée Estivale'
+            },
+            {
+                src: 'assets/images/erwan/IMG_20180826_111353.jpg',
+                alt: 'Erwan - Été 2018',
+                caption: 'Erwan - Fin d\'Été'
+            },
+            {
+                src: 'assets/images/erwan/signal-2025-11-15-164603_002.jpeg',
+                alt: 'Erwan - Récent',
+                caption: 'Erwan - Nouveau Souvenir'
+            },
+            {
+                src: 'assets/images/erwan/signal-2025-11-15-164705_002.jpeg',
+                alt: 'Erwan - Récent',
+                caption: 'Erwan - Moment Précieux'
+            },
+            {
+                src: 'assets/images/erwan/signal-2025-11-15-164812_002.jpeg',
+                alt: 'Erwan - Récent',
+                caption: 'Erwan - Derniers Moments'
+            }
+        ];
+
+        // Initialize combined gallery
+        let combinedGallery;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create combined gallery instance
+            combinedGallery = new Gallery('combined-gallery', combinedImages, {
+                mode: 'grid',
+                autoplay: false,
+                autoplayInterval: 3000
+            });
+
+            // Handle mode switching for combined gallery
+            const gallerySection = document.querySelector('#combined-gallery').closest('.section');
+            const controlBtns = gallerySection.querySelectorAll('.control-btn');
+
+            controlBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const mode = this.getAttribute('data-mode');
+                    combinedGallery.switchMode(mode);
+
+                    // Update active state
+                    controlBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
 </body>
 </html>
