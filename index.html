@@ -56,38 +56,23 @@
     </section>
 
     <!-- Family Uploads Gallery Section -->
-    <section class="family-uploads-section">
+    <section class="section" style="background: linear-gradient(135deg, var(--pastel-mint) 0%, var(--pastel-yellow) 100%);">
         <div class="container">
-            <div class="family-uploads-header">
-                <h2 class="family-uploads-title">Partagé par la Famille et les Amis</h2>
-                <p class="family-uploads-subtitle">
+            <div class="gallery-header fade-in">
+                <h2 class="gallery-title">Partagé par la Famille et les Amis</h2>
+                <p class="gallery-subtitle">
                     Merci à tous ceux qui ont partagé leurs moments spéciaux !
                 </p>
             </div>
 
-            <!-- Dynamic Gallery Container -->
-            <div id="family-uploads-container">
-                <!-- This will be populated by JavaScript -->
-                <div class="family-uploads-empty">
-                    <div class="family-uploads-empty-icon">📷</div>
-                    <h3 class="family-uploads-empty-title">Soyez le Premier à Partager !</h3>
-                    <p class="family-uploads-empty-text">
-                        Aucune photo n'a encore été partagée. Soyez le premier à contribuer vos souvenirs préférés de Marine et Erwan !
-                    </p>
-                </div>
+            <!-- Gallery Controls -->
+            <div class="gallery-controls">
+                <button class="control-btn active" data-mode="grid" data-gallery="family">📱 Vue Grille</button>
+                <button class="control-btn" data-mode="slideshow" data-gallery="family">🎬 Diaporama</button>
             </div>
 
-            <!-- Upload Stats (Hidden initially) -->
-            <div id="upload-stats" class="upload-stats" style="display: none;">
-                <div class="upload-stat-card">
-                    <span class="upload-stat-number" id="total-uploads">0</span>
-                    <span class="upload-stat-label">Photos Partagées</span>
-                </div>
-                <div class="upload-stat-card">
-                    <span class="upload-stat-number" id="total-contributors">0</span>
-                    <span class="upload-stat-label">Contributeurs</span>
-                </div>
-            </div>
+            <!-- Gallery Container -->
+            <div id="family-uploads-gallery" class="gallery-wrapper"></div>
         </div>
     </section>
 
@@ -105,45 +90,23 @@
     </div>
 
     <!-- Family Photos Showcase -->
-    <section class="family-photos">
+    <section class="section">
         <div class="container">
-            <h2 class="photos-title">Souvenirs de Famille</h2>
-
-            <div class="photo-marquee">
-                <div class="photo-track">
-                    <!-- Photo Cards -->
-                    <div class="photo-card">
-                        <img src="assets/images/opening/20201225_130911.jpg" alt="Photo de famille" loading="eager">
-                    </div>
-                    <div class="photo-card">
-                        <img src="assets/images/opening/20201225_143457.jpg" alt="Photo de famille" loading="lazy">
-                    </div>
-                    <div class="photo-card">
-                        <img src="assets/images/opening/20201226_140939.jpg" alt="Photo de famille" loading="lazy">
-                    </div>
-                    <div class="photo-card">
-                        <img src="assets/images/opening/20211002_114329.jpg" alt="Photo de famille" loading="lazy">
-                    </div>
-                    <div class="photo-card">
-                        <img src="assets/images/opening/20211002_115241.jpg" alt="Photo de famille" loading="lazy">
-                    </div>
-                    <div class="photo-card">
-                        <img src="assets/images/opening/IMG_20180823_214237.jpg" alt="Photo de famille" loading="lazy">
-                    </div>
-                    <div class="photo-card">
-                        <img src="assets/images/opening/IMG_20180824_102831.jpg" alt="Photo de famille" loading="lazy">
-                    </div>
-                    <div class="photo-card">
-                        <img src="assets/images/opening/IMG_20180825_143531.jpg" alt="Photo de famille" loading="lazy">
-                    </div>
-                    <div class="photo-card">
-                        <img src="assets/images/opening/20211224_210248.jpg" alt="Photo de famille" loading="lazy">
-                    </div>
-                    <div class="photo-card">
-                        <img src="assets/images/opening/20211225_134218.jpg" alt="Photo de famille" loading="lazy">
-                    </div>
-                </div>
+            <div class="gallery-header fade-in">
+                <h2 class="gallery-title">Souvenirs de Famille</h2>
+                <p class="gallery-subtitle">
+                    Nos plus beaux moments ensemble
+                </p>
             </div>
+
+            <!-- Gallery Controls -->
+            <div class="gallery-controls">
+                <button class="control-btn active" data-mode="grid" data-gallery="opening">📱 Vue Grille</button>
+                <button class="control-btn" data-mode="slideshow" data-gallery="opening">🎬 Diaporama</button>
+            </div>
+
+            <!-- Gallery Container -->
+            <div id="opening-gallery" class="gallery-wrapper"></div>
         </div>
     </section>
 
@@ -176,27 +139,6 @@
         </div>
     </section>
 
-    <!-- Combined Gallery Section -->
-    <section class="section" style="background: linear-gradient(135deg, var(--pastel-lavender) 0%, var(--pastel-mint) 100%); padding: var(--spacing-xxl) 0;">
-        <div class="container">
-            <div class="gallery-header fade-in">
-                <h2 class="gallery-title">Tous Nos Moments Ensemble</h2>
-                <p class="gallery-subtitle">
-                    Une collection complète de tous les souvenirs de Marine et Erwan
-                </p>
-            </div>
-
-            <!-- Gallery Controls -->
-            <div class="gallery-controls">
-                <button class="control-btn active" data-mode="grid">📱 Vue Grille</button>
-                <button class="control-btn" data-mode="slideshow">🎬 Diaporama</button>
-            </div>
-
-            <!-- Gallery Container -->
-            <div id="combined-gallery" class="gallery-wrapper"></div>
-        </div>
-    </section>
-
     <!-- Upload Call-to-Action Section (Moved to Bottom) -->
     <section class="container">
         <div class="upload-cta-section scale-in">
@@ -204,39 +146,16 @@
                 <div class="upload-cta-icon">📸</div>
                 <h2 class="upload-cta-title">Partagez Vos Photos !</h2>
                 <p class="upload-cta-description">
-                    Vous avez des photos de Marine ou Erwan que vous aimeriez partager ? Nous serions ravis de les voir !
-                    Choisissez ci-dessous pour qui sont vos photos et envoyez-les par email.
+                    Vous avez des photos de Marine et Erwan que vous aimeriez partager ? Nous serions ravis de les voir !
+                    Cliquez ci-dessous pour envoyer vos souvenirs préférés et rejoindre notre galerie familiale.
                 </p>
-
-                <!-- Upload Button Group -->
-                <div style="display: flex; flex-direction: column; gap: var(--spacing-md); max-width: 500px; margin: var(--spacing-lg) auto;">
-                    <!-- Both Button -->
-                    <a href="mailto:marineeterwan29@gmail.com?subject=Photos%20pour%20Marine%20et%20Erwan&body=Bonjour%2C%0A%0AJe%20voudrais%20partager%20des%20photos%20de%20Marine%20ET%20Erwan.%0A%0AMon%20nom%20%3A%20%0ADescription%20des%20photos%20%3A%20%0ADate%20approximative%20%3A%20%0A%0AVeuillez%20joindre%20vos%20photos%20%C3%A0%20cet%20email.%0A%0AMerci%20!%0A"
-                       class="upload-btn-primary"
-                       style="background: linear-gradient(135deg, var(--pastel-coral), var(--pastel-pink));">
-                        <span class="upload-btn-icon">📤</span>
-                        Photos de Marine et Erwan
-                    </a>
-
-                    <!-- Marine Button -->
-                    <a href="mailto:marineeterwan29@gmail.com?subject=Photos%20pour%20Marine&body=Bonjour%2C%0A%0AJe%20voudrais%20partager%20des%20photos%20de%20MARINE.%0A%0AMon%20nom%20%3A%20%0ADescription%20des%20photos%20%3A%20%0ADate%20approximative%20%3A%20%0A%0AVeuillez%20joindre%20vos%20photos%20%C3%A0%20cet%20email.%0A%0AMerci%20!%0A"
-                       class="upload-btn-primary"
-                       style="background: linear-gradient(135deg, var(--pastel-pink), var(--pastel-lavender));">
-                        <span class="upload-btn-icon">👧</span>
-                        Photos de Marine
-                    </a>
-
-                    <!-- Erwan Button -->
-                    <a href="mailto:marineeterwan29@gmail.com?subject=Photos%20pour%20Erwan&body=Bonjour%2C%0A%0AJe%20voudrais%20partager%20des%20photos%20d%27ERWAN.%0A%0AMon%20nom%20%3A%20%0ADescription%20des%20photos%20%3A%20%0ADate%20approximative%20%3A%20%0A%0AVeuillez%20joindre%20vos%20photos%20%C3%A0%20cet%20email.%0A%0AMerci%20!%0A"
-                       class="upload-btn-primary"
-                       style="background: linear-gradient(135deg, var(--pastel-blue), var(--pastel-mint));">
-                        <span class="upload-btn-icon">👦</span>
-                        Photos d'Erwan
-                    </a>
-                </div>
-
+                <a href="mailto:marineeterwan29@gmail.com?subject=Photos%20pour%20Marine%20et%20Erwan&body=Bonjour%2C%0A%0AJe%20voudrais%20partager%20des%20photos%20de%20Marine%20et%20Erwan.%0A%0AMon%20nom%20%3A%20%0ADescription%20des%20photos%20%3A%20%0ADate%20approximative%20%3A%20%0A%0AVeuillez%20joindre%20vos%20photos%20%C3%A0%20cet%20email.%0A%0AMerci%20!%0A"
+                   class="upload-btn-primary">
+                    <span class="upload-btn-icon">📤</span>
+                    Envoyer Vos Photos par Email
+                </a>
                 <p class="upload-instructions">
-                    Les emails seront envoyés à marineeterwan29@gmail.com avec le sujet correspondant
+                    Facile : Envoyez vos photos par email à marineeterwan29@gmail.com
                 </p>
             </div>
         </div>
@@ -256,217 +175,323 @@
 
     <!-- JavaScript -->
     <script src="js/navigation.js"></script>
-    <script src="js/family-uploads.js"></script>
     <script src="js/gallery.js"></script>
     <script>
-        // Combined gallery with all Marine and Erwan photos
+        // Opening photos gallery (5 photos)
+        const openingImages = [
+            {
+                src: 'assets/images/opening/111.jpeg',
+                alt: 'Photo de famille',
+                caption: ''
+            },
+            {
+                src: 'assets/images/opening/222.jpeg',
+                alt: 'Photo de famille',
+                caption: ''
+            },
+            {
+                src: 'assets/images/opening/20201226_140939.jpg',
+                alt: 'Photo de famille',
+                caption: ''
+            },
+            {
+                src: 'assets/images/opening/20211002_114329.jpg',
+                alt: 'Photo de famille',
+                caption: ''
+            },
+            {
+                src: 'assets/images/opening/20211002_115241.jpg',
+                alt: 'Photo de famille',
+                caption: ''
+            }
+        ];
+
+        // Family uploads gallery (9 photos from family_uploads folder)
+        const familyUploadsImages = [
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-202738.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            },
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-202756.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            },
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-202828.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            },
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-203840_002.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            },
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-203840_003.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            },
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-203840_004.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            },
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-203840_005.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            },
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-204224.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            },
+            {
+                src: 'assets/images/family_uploads/signal-2025-11-15-204329.jpeg',
+                alt: 'Photo partagée',
+                caption: ''
+            }
+        ];
+
+        // Combined gallery with all Marine and Erwan photos (NO CAPTIONS)
         const combinedImages = [
             // Marine's photos
             {
                 src: 'assets/images/marine/20201225_130911.jpg',
-                alt: 'Marine - Noël 2020',
-                caption: 'Marine - Noël en Famille 2020'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/20201225_143457.jpg',
-                alt: 'Marine - Noël 2020',
-                caption: 'Marine - Après-midi de Noël'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/20201226_140939.jpg',
-                alt: 'Marine - Fin 2020',
-                caption: 'Marine - Moments de Joie'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/20211002_114329.jpg',
-                alt: 'Marine - Octobre 2021',
-                caption: 'Marine - Jour Spécial'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/20211002_115241.jpg',
-                alt: 'Marine - Octobre 2021',
-                caption: 'Marine - Sourire d\'Automne'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/20211002_133416.jpg',
-                alt: 'Marine - Octobre 2021',
-                caption: 'Marine - Belle Journée'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/20211003_091706.jpg',
-                alt: 'Marine - Octobre 2021',
-                caption: 'Marine - Matin Radieux'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/20211224_210248.jpg',
-                alt: 'Marine - Noël 2021',
-                caption: 'Marine - Veille de Noël'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/20211225_134218.jpg',
-                alt: 'Marine - Noël 2021',
-                caption: 'Marine - Jour de Noël 2021'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/20211227_111858.jpg',
-                alt: 'Marine - Fin 2021',
-                caption: 'Marine - Fin d\'Année Joyeuse'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/IMG_20180823_214237.jpg',
-                alt: 'Marine - Été 2018',
-                caption: 'Marine - Soirée d\'Été'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/IMG_20180824_102831.jpg',
-                alt: 'Marine - Été 2018',
-                caption: 'Marine - Matinée Ensoleillée'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/IMG_20180824_121320.jpg',
-                alt: 'Marine - Été 2018',
-                caption: 'Marine - Après-midi d\'Août'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/IMG_20180825_143531.jpg',
-                alt: 'Marine - Été 2018',
-                caption: 'Marine - Journée Estivale'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/IMG_20180826_111353.jpg',
-                alt: 'Marine - Été 2018',
-                caption: 'Marine - Fin d\'Été'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/signal-2025-11-15-164603_002.jpeg',
-                alt: 'Marine - Récent',
-                caption: 'Marine - Nouveau Souvenir'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/signal-2025-11-15-164705_002.jpeg',
-                alt: 'Marine - Récent',
-                caption: 'Marine - Moment Précieux'
+                alt: 'Marine',
+                caption: ''
             },
             {
                 src: 'assets/images/marine/signal-2025-11-15-164812_002.jpeg',
-                alt: 'Marine - Récent',
-                caption: 'Marine - Derniers Moments'
+                alt: 'Marine',
+                caption: ''
             },
             // Erwan's photos
             {
                 src: 'assets/images/erwan/20201225_130911.jpg',
-                alt: 'Erwan - Noël 2020',
-                caption: 'Erwan - Noël en Famille 2020'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/20201225_143457.jpg',
-                alt: 'Erwan - Noël 2020',
-                caption: 'Erwan - Après-midi de Noël'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/20201226_140939.jpg',
-                alt: 'Erwan - Fin 2020',
-                caption: 'Erwan - Moments de Joie'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/20211002_114329.jpg',
-                alt: 'Erwan - Octobre 2021',
-                caption: 'Erwan - Jour Spécial'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/20211002_115241.jpg',
-                alt: 'Erwan - Octobre 2021',
-                caption: 'Erwan - Sourire d\'Automne'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/20211002_133416.jpg',
-                alt: 'Erwan - Octobre 2021',
-                caption: 'Erwan - Belle Journée'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/20211003_091706.jpg',
-                alt: 'Erwan - Octobre 2021',
-                caption: 'Erwan - Matin Radieux'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/20211224_210248.jpg',
-                alt: 'Erwan - Noël 2021',
-                caption: 'Erwan - Veille de Noël'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/20211225_134218.jpg',
-                alt: 'Erwan - Noël 2021',
-                caption: 'Erwan - Jour de Noël 2021'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/20211227_111858.jpg',
-                alt: 'Erwan - Fin 2021',
-                caption: 'Erwan - Fin d\'Année Joyeuse'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/IMG_20180823_214237.jpg',
-                alt: 'Erwan - Été 2018',
-                caption: 'Erwan - Soirée d\'Été'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/IMG_20180824_102831.jpg',
-                alt: 'Erwan - Été 2018',
-                caption: 'Erwan - Matinée Ensoleillée'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/IMG_20180824_121320.jpg',
-                alt: 'Erwan - Été 2018',
-                caption: 'Erwan - Après-midi d\'Août'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/IMG_20180825_143531.jpg',
-                alt: 'Erwan - Été 2018',
-                caption: 'Erwan - Journée Estivale'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/IMG_20180826_111353.jpg',
-                alt: 'Erwan - Été 2018',
-                caption: 'Erwan - Fin d\'Été'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/signal-2025-11-15-164603_002.jpeg',
-                alt: 'Erwan - Récent',
-                caption: 'Erwan - Nouveau Souvenir'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/signal-2025-11-15-164705_002.jpeg',
-                alt: 'Erwan - Récent',
-                caption: 'Erwan - Moment Précieux'
+                alt: 'Erwan',
+                caption: ''
             },
             {
                 src: 'assets/images/erwan/signal-2025-11-15-164812_002.jpeg',
-                alt: 'Erwan - Récent',
-                caption: 'Erwan - Derniers Moments'
+                alt: 'Erwan',
+                caption: ''
             }
         ];
 
-        // Initialize combined gallery
-        let combinedGallery;
+        // Initialize galleries
+        let openingGallery, familyUploadsGallery, combinedGallery;
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Create combined gallery instance
+            // Create opening gallery
+            openingGallery = new Gallery('opening-gallery', openingImages, {
+                mode: 'grid',
+                autoplay: false,
+                autoplayInterval: 3000
+            });
+
+            // Create family uploads gallery
+            familyUploadsGallery = new Gallery('family-uploads-gallery', familyUploadsImages, {
+                mode: 'grid',
+                autoplay: false,
+                autoplayInterval: 3000
+            });
+
+            // Create combined gallery
             combinedGallery = new Gallery('combined-gallery', combinedImages, {
                 mode: 'grid',
                 autoplay: false,
                 autoplayInterval: 3000
             });
 
-            // Handle mode switching for combined gallery
-            const gallerySection = document.querySelector('#combined-gallery').closest('.section');
-            const controlBtns = gallerySection.querySelectorAll('.control-btn');
+            // Handle mode switching for all galleries
+            const controlBtns = document.querySelectorAll('.control-btn');
 
             controlBtns.forEach(btn => {
                 btn.addEventListener('click', function() {
                     const mode = this.getAttribute('data-mode');
-                    combinedGallery.switchMode(mode);
+                    const galleryType = this.getAttribute('data-gallery');
 
-                    // Update active state
-                    controlBtns.forEach(b => b.classList.remove('active'));
+                    // Switch the appropriate gallery
+                    if (galleryType === 'opening') {
+                        openingGallery.switchMode(mode);
+                    } else if (galleryType === 'family') {
+                        familyUploadsGallery.switchMode(mode);
+                    } else {
+                        // Combined gallery (no data-gallery attribute)
+                        const gallerySection = this.closest('.section');
+                        const galleryId = gallerySection.querySelector('.gallery-wrapper').id;
+                        if (galleryId === 'combined-gallery') {
+                            combinedGallery.switchMode(mode);
+                        }
+                    }
+
+                    // Update active state for this section only
+                    const section = this.closest('.section') || this.closest('.container');
+                    const sectionBtns = section.querySelectorAll('.control-btn');
+                    sectionBtns.forEach(b => b.classList.remove('active'));
                     this.classList.add('active');
                 });
             });
