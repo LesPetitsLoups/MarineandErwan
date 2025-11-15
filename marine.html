@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Marine's Birthday Photo Gallery - Special moments and memories">
+    <title>Marine's Gallery - Birthday Celebration</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/gallery.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>👧</text></svg>">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="container nav-container">
+            <div class="nav-logo">👧 Marine's Gallery</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="marine.html">Marine</a></li>
+                <li><a href="erwan.html">Erwan</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Gallery Header -->
+    <section class="section">
+        <div class="container">
+            <div class="gallery-header fade-in">
+                <h1 class="gallery-title">Marine's Special Moments</h1>
+                <p class="gallery-subtitle">
+                    A collection of beautiful memories and birthday celebrations
+                </p>
+            </div>
+
+            <!-- Gallery Controls -->
+            <div class="gallery-controls">
+                <button class="control-btn active" data-mode="grid">📱 Grid View</button>
+                <button class="control-btn" data-mode="slideshow">🎬 Slideshow</button>
+            </div>
+
+            <!-- Gallery Container -->
+            <div id="marine-gallery" class="gallery-wrapper"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Made with <span class="footer-heart">❤</span> for Marine</p>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: var(--spacing-sm);">
+                    <a href="index.html" style="color: var(--text-dark); text-decoration: underline;">← Back to Home</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/navigation.js"></script>
+    <script src="js/gallery.js"></script>
+    <script>
+        // Marine's photo collection
+        // Currently has 1 photo - ready to expand to 20-30 photos
+        const marineImages = [
+            {
+                src: 'assets/images/marine/20211002_114329.jpg',
+                alt: 'Marine - Special Moment 1',
+                caption: 'Marine\'s Special Day'
+            }
+            // TO ADD MORE PHOTOS:
+            // Simply add new photo files to the /assets/images/marine/ folder
+            // and add entries here following this format:
+            // {
+            //     src: 'assets/images/marine/your-photo-name.jpg',
+            //     alt: 'Marine - Special Moment 2',
+            //     caption: 'Optional caption'
+            // },
+        ];
+
+        // Initialize gallery
+        let marineGallery;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Create gallery instance
+            marineGallery = new Gallery('marine-gallery', marineImages, {
+                mode: 'grid',
+                autoplay: false,
+                autoplayInterval: 3000
+            });
+
+            // Handle mode switching
+            const controlBtns = document.querySelectorAll('.control-btn');
+            controlBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const mode = this.getAttribute('data-mode');
+                    marineGallery.switchMode(mode);
+
+                    // Update active state
+                    controlBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
