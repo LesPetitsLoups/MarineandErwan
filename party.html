@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Galerie Photos de la Fête - Moments festifs et célébrations">
+    <title>The Party! - Célébration d'Anniversaire</title>
+
+    <!-- Stylesheets -->
+    <link rel="stylesheet" href="css/main.css">
+    <link rel="stylesheet" href="css/gallery.css">
+
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎉</text></svg>">
+</head>
+<body>
+    <!-- Navigation Header -->
+    <nav class="nav-header">
+        <div class="container nav-container">
+            <div class="nav-logo">🎉 The Party!</div>
+            <ul class="nav-links">
+                <li><a href="index.html">Accueil</a></li>
+                <li><a href="marine.html">Marine</a></li>
+                <li><a href="erwan.html">Erwan</a></li>
+                <li><a href="party.html">The Party!</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Gallery Header -->
+    <section class="section">
+        <div class="container">
+            <div class="gallery-header fade-in">
+                <h1 class="gallery-title">The Party! 🎉</h1>
+                <p class="gallery-subtitle">
+                    Les meilleurs moments de la fête - Célébrations inoubliables
+                </p>
+            </div>
+
+            <!-- Gallery Controls -->
+            <div class="gallery-controls">
+                <button class="control-btn active" data-mode="grid">📱 Vue Grille</button>
+                <button class="control-btn" data-mode="slideshow">🎬 Diaporama</button>
+            </div>
+
+            <!-- Gallery Container -->
+            <div id="party-gallery" class="gallery-wrapper"></div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>Fait avec <span class="footer-heart">❤</span> pour The Party!</p>
+                <p style="font-size: 0.9rem; opacity: 0.8; margin-top: var(--spacing-sm);">
+                    <a href="index.html" style="color: var(--text-dark); text-decoration: underline;">← Retour à l'Accueil</a>
+                </p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="js/navigation.js"></script>
+    <script src="js/gallery.js"></script>
+    <script>
+        // Collection de photos The Party! - 15 photos
+        const partyImages = [
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025423_002.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025423_003.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025423_004.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025423_005.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025542_002.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025542_004.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025542_005.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025542_006.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025542_007.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025542_008.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025635_002.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025635_003.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025635_004.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025635_005.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            },
+            {
+                src: 'assets/images/The_Party!/signal-2025-11-16-025635_006.jpeg',
+                alt: 'The Party!',
+                caption: ''
+            }
+        ];
+
+        // Initialiser la galerie
+        let partyGallery;
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Créer l'instance de galerie
+            partyGallery = new Gallery('party-gallery', partyImages, {
+                mode: 'grid',
+                autoplay: false,
+                autoplayInterval: 3000
+            });
+
+            // Gérer le changement de mode
+            const controlBtns = document.querySelectorAll('.control-btn');
+            controlBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const mode = this.getAttribute('data-mode');
+                    partyGallery.switchMode(mode);
+
+                    // Mettre à jour l'état actif
+                    controlBtns.forEach(b => b.classList.remove('active'));
+                    this.classList.add('active');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
